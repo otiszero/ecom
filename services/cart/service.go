@@ -71,6 +71,7 @@ func (h *Handler) createOrder(products []types.Product, cartItems []types.CartCh
 		h.store.UpdateProduct(product)
 	}
 
+	// Tạo order record + order item record nên trong 1 transaction
 	// create order record
 	orderID, err := h.orderStore.CreateOrder(types.Order{
 		UserID:  userID,
