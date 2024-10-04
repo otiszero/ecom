@@ -48,6 +48,7 @@ type OrderItem struct {
 	CreatedAt time.Time `json:"createdAt"`
 }
 
+// Interface nên define ở nơi sử dụng hoặc define ở nơi implement
 type UserStore interface {
 	GetUserByEmail(email string) (*User, error)
 	GetUserByID(id int) (*User, error)
